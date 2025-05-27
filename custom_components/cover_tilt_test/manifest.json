@@ -1,0 +1,11 @@
+{
+  "domain": "cover_tilt_test",
+  "name": "Cover Tilt Test",
+  "codeowners": [],
+  "dependencies": [
+    "knx"
+  ],
+  "requirements": [],
+  "version": "1.0.0",
+  "config_flow": false
+}

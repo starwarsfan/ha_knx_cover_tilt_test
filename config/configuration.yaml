@@ -1,0 +1,38 @@
+
+# Loads default set of integrations. Do not remove.
+default_config:
+
+logger:
+  default: info
+  logs:
+    custom_components.shadow_control: debug
+    custom_components.cover_tilt_test: debug
+    homeassistant.components.knx: debug
+    homeassistant.core: debug
+
+knx:
+  cover:
+    - name: "Fenster Büro Ost"
+      move_long_address: 1/0/18
+      stop_address: 1/1/18
+      position_address: 1/2/18
+      position_state_address: 1/3/218
+      angle_address: 1/2/118
+      angle_state_address: 1/3/118
+      travelling_time_down: 50
+      travelling_time_up: 60
+
+input_boolean:
+  test_bug_height_control:
+    name: Test Bug Height Control
+    initial: off
+    icon: mdi:arrow-expand-vertical
+  test_bug_tilt_control:
+    name: Test Bug Tilt Control
+    initial: off
+    icon: mdi:rotate-3d
+
+cover_tilt_test:
+  target_cover_entity_id: "cover.fenster_buro_ost"
+  height_control_entity_id: input_boolean.test_bug_height_control
+  tilt_control_entity_id: input_boolean.test_bug_tilt_control
